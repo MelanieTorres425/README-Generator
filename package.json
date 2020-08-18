@@ -1,0 +1,19 @@
+{
+  "name": "readme-generator",
+  "version": "1.0.0",
+  "description": "new file",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MelanieTorres425/README-Generator.git"
+  },
+  "author": "mt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MelanieTorres425/README-Generator/issues"
+  },
+  "homepage": "https://github.com/MelanieTorres425/README-Generator#readme"
+}

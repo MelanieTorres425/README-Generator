@@ -14,76 +14,69 @@ const questions = [
   "What is your email address?",
 ];
 
-//Prompts
-function promptUser() {
-  return inquirer.prompt([
-    {
-      type: "input",
-      name: "title",
-      message: questions[0],
-    },
-    {
-      type: "input",
-      name: "description",
-      message: questions[1],
-    },
-    {
-      type: "input",
-      name: "install",
-      message: questions[2],
-    },
-    {
-      type: "input",
-      name: "usage",
-      message: questions[3],
-    },
-    {
-      type: "input",
-      name: "contribute",
-      message: questions[4],
-    },
-    {
-      type: "input",
-      name: "test",
-      message: questions[5],
-    },
-    {
-      type: "rawlist",
-      name: "licensebadge",
-      message: questions[6],
-      choices: ["None", "MIT", "Apache", "GPL"],
-    },
-    {
-      type: "input",
-      name: "username",
-      message: questions[7],
-    },
-    {
-      type: "input",
-      name: "email",
-      message: questions[8],
-    },
-  ]);
-}
-
 // function to write README file
-function writeToFile(fileName, answers) {
-  fs.writeFile(fileName, answers, (err) => {
+function writeToFile(fileName, data) {
+  console.log(data);
+  const genMarkdown = generateMarkdown(data);
+  fs.writeFile(fileName, genMarkdown, (err) => {
     if (err) throw err;
   });
 }
 
 // function to initialize program
-async function init() {
-  console.log("initialize");
-  try {
-    const answers = await promptUser();
-    const readMe = generateMarkdown(answers);
-    await writeToFile("README.md", readMe);
-    console.log("\nsuccessfully wrote README\n");
-  } catch (err) {
-    console.log(err);
-  }
+function init() {
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "title",
+        message: questions[0],
+      },
+      {
+        type: "input",
+        name: "description",
+        message: questions[1],
+      },
+      {
+        type: "input",
+        name: "installation",
+        message: questions[2],
+      },
+      {
+        type: "input",
+        name: "usage",
+        message: questions[3],
+      },
+      {
+        type: "input",
+        name: "contributing",
+        message: questions[4],
+      },
+      {
+        type: "input",
+        name: "instructions",
+        message: questions[5],
+      },
+      {
+        type: "list",
+        name: "badge",
+        message: questions[6],
+        choices: ["None", "MIT", "Apache", "GPL"],
+      },
+      {
+        type: "input",
+        name: "github",
+        message: questions[7],
+      },
+      {
+        type: "input",
+        name: "email",
+        message: questions[8],
+      },
+    ])
+    .then((answers) => {
+      writeToFile("README.md", answers);
+    });
 }
 
 // function call to initialize program
