@@ -28,9 +28,9 @@ function generateMarkdown(data) {
   - ${data.tests}
   ## Questions <a name="questions"></a>
   Any questions? Please Contact Below
-  - GitHub Link
+  - GitHub Link: 
   [${data.github}](https://github.com/${data.github}) 
-  - Email
+  - Email: 
   ${data.email}
   ## Screenshots <a name="screenshots"></a>
   ![](././Develop/screenshots/Screenshot1.png)
