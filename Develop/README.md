@@ -1,6 +1,6 @@
 # ReadMe Generator
 
-![GitHub](https://img.shields.io/github/license/melanietorres425/ReadMe Generator)
+![GitHub](https://img.shields.io/github/license/melanietorres425/ReadMe_Generator)
 
 ## Description <a name="description"></a>
 
