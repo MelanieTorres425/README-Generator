@@ -13,6 +13,7 @@ function generateMarkdown(data) {
   5. [Contribution Guideline](#contributing)
   6. [Test Instructions](#test)
   7. [Questions](#questions)
+  8. [Screenshots](#screenshots)
  
  
   ### Installation Instructions <a name="installation"></a>
@@ -20,7 +21,7 @@ function generateMarkdown(data) {
   ### Usage Information <a name="Usage"></a>
   - ${data.usage}
   ## License <a name="license"></a>
-  - ${data.badge}
+  - This application is covered under ${data.badge} license. 
   ## Contribution Guideline <a name="contribution"></a>
   - ${data.contributing}
   ## Test Instructions <a name="tests"></a>
@@ -31,6 +32,9 @@ function generateMarkdown(data) {
   [${data.github}](https://github.com/${data.github}) 
   - Email
   ${data.email}
+  ## Screenshots <a name="screenshots"></a>
+  ![](././Develop/screenshots/Screenshot1.png)
+  
 
 `;
 }
